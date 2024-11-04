@@ -15,12 +15,40 @@ async function fetchCharacters() {
     }
 }
 
+function createCharacterCard (data) {
+    console.log(data);
+    return `
+        <div class="card" style="width: 18rem;">
+            <img src="${data.image}" class="card-img-top" alt="${data.name}">
+            <div class="card-body">
+                <h5 class="card-title">${data.name}</h5>
+                <p class="card-text">${data.race} - ${data.gender}</p>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                    Base KI:
+                    <span>${data.ki}</span>
+                </li>
+                <li class="list-group-item">
+                    Total KI:
+                    <span>${data.maxKi}</span>
+                </li>
+                <li class="list-group-item">
+                    Affiliation:
+                    <span>${data.affiliation}</span>
+                </li>
+            </ul>
+        </div>
+    `;
+}
+
 async function displayCharacters() {
     const main = document.querySelector('main');
     const data = await fetchCharacters();
 
     if(data && data.items) {
-        console.log(data.items);
+        const charactersCard = data.items.map(createCharacterCard);
+        main.innerHTML = charactersCard;
     } else {
         main.innerHTML = `<p>Dragon Ball API couldn't load</p>`;
     }
