@@ -34,7 +34,7 @@ function createCharacterCard (data) {
                     <span>${data.maxKi}</span>
                 </li>
                 <li class="list-group-item">
-                    Affiliation:
+                    Afiliación:
                     <span>${data.affiliation}</span>
                 </li>
             </ul>
