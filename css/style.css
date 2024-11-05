@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+
 :root {
     --red: #EC2324;
     --lightYellow: #FFF100;
@@ -12,6 +15,10 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: "Source Code Pro", monospace;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
 }
 
 header {
@@ -32,6 +39,9 @@ header img {
 header a {
     text-decoration: none;
     color: var(--white);
+    font-family: "Bangers", system-ui;
+    font-weight: 400;
+    font-style: normal;
 }
 
 header a:hover {
@@ -45,4 +55,35 @@ main {
     align-items: center;
     gap: 10px;
     flex-wrap: wrap;
+    background-color: var(--black);
+}
+
+.imgCharacter {
+    height: 500px;
+    background-color: var(--orange);
+    transition: transform 1s;
+}
+
+.imgPlanet {
+    height: 300px;
+    transition: transform 1s;
+}
+
+.imgCharacter:hover, .imgPlanet:hover {
+    transform: scale(1.2);
+}
+
+.card {
+    margin: 2rem;
+}
+
+.card .card-title {
+    color: var(--darkMustard);
+    font-family: "Bangers", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}
+
+span {
+    color: var(--red);
 }

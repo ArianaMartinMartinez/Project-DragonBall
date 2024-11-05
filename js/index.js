@@ -19,7 +19,7 @@ function createCharacterCard (data) {
     console.log(data);
     return `
         <div class="card" style="width: 18rem;">
-            <img src="${data.image}" class="card-img-top" alt="${data.name}">
+            <img src="${data.image}" class="card-img-top imgCharacter" alt="${data.name}">
             <div class="card-body">
                 <h5 class="card-title">${data.name}</h5>
                 <p class="card-text">${data.race} - ${data.gender}</p>
@@ -27,11 +27,11 @@ function createCharacterCard (data) {
             <ul class="list-group list-group-flush">
                 <li class="list-group-item">
                     Base KI:
-                    <span>${data.ki}</span>
+                    <span>${data.ki == 'unknown' ? 'Desconocido' : data.ki}</span>
                 </li>
                 <li class="list-group-item">
                     Total KI:
-                    <span>${data.maxKi}</span>
+                    <span>${data.maxKi == 'unknown' ? 'Desconocido' : data.maxKi}</span>
                 </li>
                 <li class="list-group-item">
                     Afiliación:
@@ -47,7 +47,7 @@ async function displayCharacters() {
     const data = await fetchCharacters();
 
     if(data && data.items) {
-        const charactersCard = data.items.map(createCharacterCard);
+        const charactersCard = data.items.map(createCharacterCard).join('');
         main.innerHTML = charactersCard;
     } else {
         main.innerHTML = `<p>Dragon Ball API couldn't load</p>`;

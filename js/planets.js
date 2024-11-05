@@ -20,7 +20,7 @@ function createPlanetCard (data) {
     let desc = data.description.substring(0, 100);
     return `
         <div class="card" style="width: 18rem;">
-            <img src="${data.image}" class="card-img-top" alt="${data.name}">
+            <img src="${data.image}" class="card-img-top imgPlanet" alt="${data.name}">
             <div class="card-body">
                 <h5 class="card-title">${data.name}</h5>
             </div>
@@ -41,7 +41,7 @@ async function displayPlanets() {
     const data = await fetchPlanets();
 
     if(data && data.items) {
-        const planetsCard = data.items.map(createPlanetCard);
+        const planetsCard = data.items.map(createPlanetCard).join('');
         main.innerHTML = planetsCard;
     } else {
         main.innerHTML = `<p>Dragon Ball API couldn't load</p>`;
