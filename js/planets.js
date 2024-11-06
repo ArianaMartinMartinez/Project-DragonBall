@@ -20,7 +20,7 @@ function createPlanetCard (data) {
     let desc = data.description.substring(0, 100);
     return `
         <div class="card" style="width: 18rem;">
-            <img src="${data.image}" class="card-img-top imgPlanet" alt="${data.name}">
+            <img src="${data.image}" class="card-img-top" id="imgPlanet" alt="${data.name}">
             <div class="card-body">
                 <h5 class="card-title">${data.name}</h5>
             </div>

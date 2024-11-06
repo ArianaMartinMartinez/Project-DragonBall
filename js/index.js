@@ -19,7 +19,7 @@ function createCharacterCard (data) {
     console.log(data);
     return `
         <div class="card" style="width: 18rem;">
-            <img src="${data.image}" class="card-img-top imgCharacter" alt="${data.name}">
+            <img src="${data.image}" class="card-img-top" alt="${data.name}">
             <div class="card-body">
                 <h5 class="card-title">${data.name}</h5>
                 <p class="card-text">${data.race} - ${data.gender}</p>
