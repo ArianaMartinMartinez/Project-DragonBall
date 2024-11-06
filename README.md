@@ -5,7 +5,7 @@
 ---
 
 >[!CAUTION]
->Please read all the points of the README in order to make good use of the project. Thank you.
+>Por favor lea todos los puntos del README para poder hacer un buen uso de este proyecto. Gracias.
 
 ## 💡 Información
 
